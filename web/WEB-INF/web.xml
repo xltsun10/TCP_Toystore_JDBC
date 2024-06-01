@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="6.0" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd">
+    <servlet>
+        <servlet-name>ShowToyServlet</servlet-name>
+        <servlet-class>controller.ShowToyServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayServlet</servlet-name>
+        <servlet-class>controller.DisplayServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchToy</servlet-name>
+        <servlet-class>controller.SearchToy</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>detailsToy</servlet-name>
+        <servlet-class>controller.detailsToy</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowToyServlet</servlet-name>
+        <url-pattern>/show</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayServlet</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchToy</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>detailsToy</servlet-name>
+        <url-pattern>/detailsToy</url-pattern>
+    </servlet-mapping>
+</web-app>
