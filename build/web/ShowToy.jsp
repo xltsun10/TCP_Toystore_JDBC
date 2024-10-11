@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>TOY SHOP</title>
+        <title>ToyStore</title>
     </head>
     <body>
         <form>
