@@ -14,9 +14,9 @@ import java.sql.*;
  * @author lequa
  */
 public class ToyDAO extends DBContext{
-    public List<Toy> getAllToy(){
+    public List<Toy> getAllToys(){
         List<Toy> list = new ArrayList<>();
-        String sql="Select * from Toy";
+        String sql="Select * from Toys";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs= ps.executeQuery();
@@ -34,7 +34,7 @@ public class ToyDAO extends DBContext{
         }
         return list;
     }
-    public List<Toy> getAllToys(){
+    public List<Toy> getAllToy(){
         List<Toy> list= new ArrayList<>();
         String sql="INSERT INTO `login`.`tbluser` (`username`, `password`, `address`, `birthday`, `sex`, `description`) VALUES ('nhat003', '123456', 'Hanio', '2001-10-01', 'dfs', 'sf');";
         try {

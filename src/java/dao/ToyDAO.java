@@ -15,7 +15,7 @@ import java.sql.*;
 public class ToyDAO extends DBContext{
     public List<Toy> getAllToys(){
         List<Toy> list = new ArrayList<>();
-        String sql= "select * from Toy";
+        String sql= "select * from Toys";
         try {
             PreparedStatement ps= connection.prepareStatement(sql);
             ResultSet rs= ps.executeQuery();
@@ -35,7 +35,7 @@ public class ToyDAO extends DBContext{
         return list;
     }
     public Toy getToybyId(int id){
-        String query = "select * from Toy where id = ?";
+        String query = "select * from Toys where id = ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, id);
@@ -55,7 +55,7 @@ public class ToyDAO extends DBContext{
     }
     public List<Toy> getToybyName(String txtSearch){
         List<Toy> list = new ArrayList<>();
-        String query = "select * from Toy where name LIKE ?";
+        String query = "select * from Toys where name LIKE ?";
         try {            
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, "%"+txtSearch+"%");
@@ -75,7 +75,7 @@ public class ToyDAO extends DBContext{
     }
     public List<Toy> getToyFilter(String txtSearch, int idType, String age, float priceMin, float priceMax){
         List<Toy> list = new ArrayList<>();
-        String query = "select * from Toy where name LIKE ? and idType=? and age LIKE ? and price> ? and price <?";
+        String query = "select * from Toys where name LIKE ? and idType=? and age LIKE ? and price> ? and price <?";
         try {            
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, "%"+txtSearch+"%");
@@ -99,7 +99,7 @@ public class ToyDAO extends DBContext{
     }
     public List<Toy> getToyFilter2(String txtSearch,  String age, float priceMin, float priceMax){
         List<Toy> list = new ArrayList<>();
-        String query = "select * from Toy where name LIKE ? and age LIKE ? and price> ? and price <?";
+        String query = "select * from Toys where name LIKE ? and age LIKE ? and price> ? and price <?";
         try {            
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, "%"+txtSearch+"%");
@@ -121,7 +121,7 @@ public class ToyDAO extends DBContext{
         return list;
     }
     public void insertToy(int idType, String name, String age, String image, Float price){
-        String query="INSERT INTO Toy (idType, name, age, image, price)\n"
+        String query="INSERT INTO Toys (idType, name, age, image, price)\n"
                 + "     VALUES\n"
                 + "           (?,?,?,?,?)";
         try {
@@ -152,7 +152,7 @@ public class ToyDAO extends DBContext{
         }
     }
     public void deleteToy(int id){
-        String query="delete from Toy where id=?";
+        String query="delete from Toys where id=?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, id);

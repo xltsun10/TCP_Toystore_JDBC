@@ -17,7 +17,7 @@ import java.sql.*;
 public class TypeDAO extends DBContext{
     public List<Type> getAllTypes() {
         List<Type> list = new ArrayList<>();
-        String sql = "select * from Type";
+        String sql = "select * from Types";
         try {
             PreparedStatement pt = connection.prepareStatement(sql);
             ResultSet rs = pt.executeQuery();
@@ -36,7 +36,7 @@ public class TypeDAO extends DBContext{
     }
     public Type getTypebyId(int id) throws SQLException{
         
-        String sql= "select * from Type where id = ?";
+        String sql= "select * from Types where id = ?";
         
         try {
             PreparedStatement pt = connection.prepareStatement(sql);
@@ -53,7 +53,7 @@ public class TypeDAO extends DBContext{
     }
     public List<Type> getTypebyName(String txtSearch)throws SQLException{
         List<Type> list = new ArrayList<>();
-        String query = "select * from Type where name LIKE ?";
+        String query = "select * from Types where name LIKE ?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1, "%"+txtSearch+"%");
@@ -69,7 +69,7 @@ public class TypeDAO extends DBContext{
         return list;
     }
     public void insertType(String name, String description){
-        String query="INSERT INTO Type(name, description)\n"
+        String query="INSERT INTO Types (name, description)\n"
                 + "     VALUES\n"
                 + "           (?,?)";
         try {
@@ -83,7 +83,7 @@ public class TypeDAO extends DBContext{
         }
     }
     public void UpdateType(int id, String name, String description){
-        String query="UPDATE Type  SET name =?, description=? WHERE id=?";
+        String query="UPDATE Types  SET name =?, description=? WHERE id=?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setString(1,name);
@@ -95,7 +95,7 @@ public class TypeDAO extends DBContext{
         }
     }
     public void deleteType(int id){
-        String query="delete from Type where id=?";
+        String query="delete from Types where id=?";
         try {
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, id);
