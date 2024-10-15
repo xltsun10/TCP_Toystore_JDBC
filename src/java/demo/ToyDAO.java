@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Toy;
 import java.sql.*;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -60,7 +61,8 @@ public class ToyDAO extends DBContext{
         for(Toy toy : list){
             System.out.println(toy.getName()+"\n");
         }
-                
+            LocalDateTime currentDateTime = LocalDateTime.now();
+        System.out.println("Current Date and Time: " + currentDateTime.toString());    
         
     }
 }
